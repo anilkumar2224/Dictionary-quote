@@ -228,7 +228,13 @@ window.location.href=`https://www.google.com/search?q=${word}`;
   
 
 
-var dict=document.getElementById('quote');
+var quot=document.getElementById('quote');
+quot.addEventListener('click',e=>{
+  window.history.back();
+
+});
+
+var dict=document.getElementById('dict');
 dict.addEventListener('click',e=>{
   window.history.back();
 
