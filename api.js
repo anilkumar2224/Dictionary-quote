@@ -234,11 +234,11 @@ quot.addEventListener('click',e=>{
 
 });
 
-var dict=document.getElementById('dict');
-dict.addEventListener('click',e=>{
-    e.preventDefault();
+// var dict=document.getElementById('dict');
+// dict.addEventListener('click',e=>{
+//     e.preventDefault();
 
-});
+// });
 
 var dd=document.getElementById('fav');
 var sss=document.getElementById('myDropdown');
