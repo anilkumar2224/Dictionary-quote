@@ -248,7 +248,7 @@ dd.addEventListener('click',e=>{
 sss.classList.remove('hide');
 });
 sss.addEventListener('click',e=>{
-window.location.assign('savedwords.html');
+// window.location.assign('savedwords.html');
 window.history.back();
 
 });
