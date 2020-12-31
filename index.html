@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="style1.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <style>
+      .save{
+        top: 15px;
+        right: 30px;
+      }
+    </style>
+</head>
+<body onload="generateArray()">
+   
+    <nav class="navb">
+       
+        <ul>
+            <li><label for="close">
+                <span id="open-btn" class="fa fa-bars"></span>
+            </label></li>
+            <li><h2>Dictionary</h2></li>
+            <li> 
+                <label >
+                    
+                    <i id="fav" class="fa fa-ellipsis-v" aria-hidden="true" ></i>
+                </label>
+               </li>
+               
+        </ul>
+        <div id="myDropdown" class="dropdown-content hide">
+            <a  id="pop" style="cursor: pointer;">saved words</a>
+          </div>
+       
+      
+      </nav>
+    
+      
+      <nav class="dropmenu" id="dropmenu">
+       <span ><a  href="#" class="brand"></a></span>
+       <span ><a href="#" class="brand1"></a></span>
+       <span ><a href="#" class="brand2"></a></span>
+       <span ><a href="#" class="brand3"></a></span>
+        <label for="close">
+            <span id="close-btn" class="fas fa-times"></span>
+        </label>
+        <ul>
+            <li class="list-item"><i class="nav-link fa fa-language fa-fw" style="color: #ff1744;"></i><a id="dict" >Dictionary</a></li>
+            <li class="list-item"><i class="nav-link fa fa-quote-left fa-fw" style="color:#fdd835 ;"></i><a id="quote">Quotes</a></li>
+        </ul>
+       </nav>
+
+       <main>
+        <div class="container">
+            
+            <div class="search-box">
+                <div class="search-icon"><i class="fa fa-search "></i></div>
+                <form  class="search-form" id="form" onkeydown="return event.key!='Enter';">
+                    <input type="text" placeholder="Search" id="search" autocomplete="off">
+                </form>
+                <svg class="search-border" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" viewBox="0 0 671 111" style="enable-background:new 0 0 671 111;"
+                 xml:space="preserve">
+              <path class="border" d="M335.5,108.5h-280c-29.3,0-53-23.7-53-53v0c0-29.3,23.7-53,53-53h280"/>
+              <path class="border" d="M335.5,108.5h280c29.3,0,53-23.7,53-53v0c0-29.3-23.7-53-53-53h-280"/>
+            </svg>
+                <div class="go-icon" id="go"><i class="fa fa-arrow-right" style="cursor: pointer;"></i></div>
+                <div id="close" class="close hide"><i class="fas fa-times" style="cursor: pointer;"></i></div>
+            </div>
+      </div>
+    </main>
+
+
+
+
+
+       <main id="words" class="words hide" >
+  
+        
+        <section>
+    
+         <!--Card Column One -->
+          <div class="flex-col" id="box0">
+           
+            <div class="cards one"  id="0">
+               
+              <h3>Supervisor</h3>
+              <p >/supesar/</p>
+              <p >Verb</p>
+              <p >Monitors activity to identify project roadblocks</p>
+              <i class="fas fa-heart save" id="s0"></i>
+              <div class="button">
+              <ul> 
+                <li class="li0" >
+                  <a>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span  class="fa fa-left link"   id="link0">read more</span>
+                  </a> 
+                </li>
+               
+              </ul> 
+            </div>
+            </div>
+          </div>
+    
+          <!-- Card Column Two -->
+          <div class="flex-col" id="box1">
+            <div class="cards two" id="1">
+              <h3>Team Builder</h3>
+              <p>Scans our talent network to create this optimal team for your project</p>
+              <i class="fas fa-heart save" id="s1"></i>
+              <div class="button" >
+                <ul> 
+                  <li class="li1">
+                    <a >
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span  class="fa fa-left link"   id="link1">read more</span>
+                    </a> 
+                  </li>
+                 
+                </ul> 
+              </div>
+            </div>
+            <div class="cards three" id="2">
+              <h3>Karma</h3>
+              <p>Regularly evaluates our talent to ensure quality</p>
+              <i class="fas fa-heart save" id="s2"></i>
+              <div class="button">
+                <ul> 
+                  <li class="li2">
+                    <a >
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span  class="fa fa-left link"   id="link2">read more</span>
+                    </a> 
+                  </li>
+                 
+                </ul> 
+              </div>
+            </div>
+          </div>
+    
+          <!-- Card Column Three -->
+         <div class="flex-col" id="box3">
+            <div class="cards four" id="3">
+              <h3>Calculator</h3>
+              <p>Uses data from past projects to provide better delivery estimates</p>
+              <i class="fas fa-heart save" id="s3"></i>
+              <div class="button">
+                <ul> 
+                  <li class="li3" >
+                    <a >
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span  class="fa fa-left link"   id="link3">read more</span>
+                    </a> 
+                  </li>
+                 
+                </ul> 
+              </div>
+            </div>
+          </div>
+          
+        </section>
+        <section style="margin-top: 0px;">
+            
+            <!--Card Column One -->
+             <div class="flex-col" id="box4">
+               <div class="cards one" style="border-top: 5px#aa00ff solid;" id="4">
+                 <h3>Supervisor</h3>
+                 <p>Monitors activity to identify project roadblocks</p>
+                 <i class="fas fa-heart save" id="s4"></i>
+                 <div class="button">
+                  <ul> 
+                    <li class="li4">
+                      <a >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span  class="fa fa-left link"   id="link4">read more</span>
+                      </a> 
+                    </li>
+                   
+                  </ul> 
+                </div>
+               </div>
+             </div>
+       
+             <!-- Card Column Two -->
+             <div class="flex-col" id="box5">
+               <div class="cards two" style="border-top: 5px #ffb2dd solid;" id="5">
+                 <h3>Team Builder</h3>
+                 <p>Scans our talent network to create this optimal team for your project</p>
+                 <i class="fas fa-heart save" id="s5"></i>
+                 <div class="button">
+                  <ul> 
+                    <li class="li5">
+                      <a >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span  class="fa fa-left link"   id="link5">read more</span>
+                      </a> 
+                    </li>
+                   
+                  </ul> 
+                </div>
+               </div>
+               <div class="cards three"  id="6" style="border-top: 5px #18ffff solid;">
+                 <h3>Karma</h3>
+                 <p>Regularly evaluates our talent to ensure quality</p>
+                 <i class="fas fa-heart save" id="s6"></i>
+                 <div class="button">
+                  <ul> 
+                    <li class="li6">
+                      <a >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span  class="fa fa-left link"   id="link6">read more</span>
+                      </a> 
+                    </li>
+                   
+                  </ul> 
+                </div>
+               </div>
+             </div>
+       
+             <!-- Card Column Three -->
+            <div class="flex-col" id="box7">
+               <div class="cards four" id="7" style="border-top: 5px #ffee58 solid;">
+                 <h3>Calculator</h3>
+                 <p>Uses data from past projects to provide better delivery estimates</p>
+                 <i class="fas fa-heart save" id="s7"></i>
+                 <div class="button">
+                  <ul> 
+                    <li class="li7">
+                      <a >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span  class="fa fa-left link"   id="link7">read more</span>
+                      </a> 
+                    </li>
+                   
+                  </ul> 
+                </div>
+               </div>
+             </div>
+             
+           </section>
+           <section style="margin-top: 0px; margin-bottom: 200px;">
+    
+            <!--Card Column One -->
+             <div class="flex-col" id="box8">
+            <div class="cards one" id="8"style="border-top: 5px #ff1744 solid;">
+                 <h3>Supervisor</h3>
+                 <p>Monitors activity to identify project roadblocks</p>
+                 <i class="fas fa-heart save" id="s8"></i>
+                 <div class="button">
+                  <ul> 
+                    <li class="li8">
+                      <a >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span  class="fa fa-left link"   id="link8">read more</span>
+                      </a> 
+                    </li>
+                   
+                  </ul> 
+                </div>
+               </div>
+             </div>
+       
+             <!-- Card Column Two -->
+             <div class="flex-col" id="box9">
+               <div class="cards two" id="9"style="border-top: 5px #2962ff solid;">
+                 <h3>Team Builder</h3>
+                 <p>Scans our talent network to create this optimal team for your project</p>
+                 <i class="fas fa-heart save" id="s9"></i>
+                 <div class="button">
+                  <ul> 
+                    <li class="li9">
+                      <a >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span  class="fa fa-left link"   id="link9">read more</span>
+                      </a> 
+                    </li>
+                   
+                  </ul> 
+                </div>
+               </div>
+               <div class="cards three" id="10" style="border-top: 5px #ff9e80 solid;">
+                 <h3>Karma</h3>
+                 <p>Regularly evaluates our talent to ensure quality</p>
+                 <i class="fas fa-heart save" id="s10"></i>
+                 <div class="button">
+                  <ul> 
+                    <li class="li10">
+                      <a >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span  class="fa fa-left link"   id="link10">read more</span>
+                      </a> 
+                    </li>
+                   
+                  </ul> 
+                </div>
+               </div>
+             </div>
+       
+             <!-- Card Column Three -->
+            <div class="flex-col" id="box11">
+               <div class="cards four" id="11" style="border-top: 5px #64dd17 solid;">
+                 <h3>Calculator</h3>
+                 <p>Uses data from past projects to provide better delivery estimates</p>
+                 <i class="fas fa-heart save" id="s11"></i>
+                 <div class="button">
+                  <ul> 
+                    <li class="li11">
+                      <a >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span  class="fa fa-left link"   id="link11">read more</span>
+                      </a> 
+                    </li>
+                   
+                  </ul> 
+                </div>
+               </div>
+             </div>
+             
+           </section>
+      </main>
+      
+
+      <main id="mean" class="mean hide" >
+        <section id="s">
+      <div class="flex-col" id="box88">
+        <div class="cards four" id="88" style="border-top: 5px crimson solid;">
+         
+        </div>
+      </div>
+      
+    </section>
+       </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script    src="mywords.js"></script>
+<script src="api.js"></script>
+<script src="jq.js"></script>
+
+
+
+<script>
+    var btn=document.getElementById('open-btn');
+    var menu=document.getElementById('dropmenu');
+btn.addEventListener('click',e=>{
+e.preventDefault();
+menu.style.left='0px';
+menu.style.transition='0.7s ease';
+
+});
+
+var cross=document.getElementById('close-btn');
+cross.addEventListener('click',e=>{
+e.preventDefault();
+menu.style.left='-320px';
+menu.style.transition='0.7s ease';
+
+});
+
+
+
+
+
+    
+</script>
+</body>
+</html>
