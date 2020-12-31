@@ -236,8 +236,7 @@ quot.addEventListener('click',e=>{
 
 var dict=document.getElementById('dict');
 dict.addEventListener('click',e=>{
-  window.history.back();
-   window.history.back();
+    e.preventDefault();
 
 });
 
