@@ -248,8 +248,8 @@ dd.addEventListener('click',e=>{
 sss.classList.remove('hide');
 });
 sss.addEventListener('click',e=>{
-window.location.href='savedwords.html';
-
+window.location.assign('savedwords.html');
+window.history.back();
 
 });
 var numArray=[];
