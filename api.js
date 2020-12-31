@@ -230,12 +230,12 @@ window.location.href=`https://www.google.com/search?q=${word}`;
 
 var dict=document.getElementById('quote');
 dict.addEventListener('click',e=>{
-    window.location.href='quote.html';
+  window.history.back();
 
 });
 var dict=document.getElementById('dict');
 dict.addEventListener('click',e=>{
-    window.location.href='index.html';
+window.history.back();
 });
 
 var dd=document.getElementById('fav');
@@ -245,7 +245,6 @@ dd.addEventListener('click',e=>{
 sss.classList.remove('hide');
 });
 sss.addEventListener('click',e=>{
-window.location.href='savedwords.html';
 window.history.back();
 
 });
