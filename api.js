@@ -232,7 +232,6 @@ window.location.href=`https://www.google.com/search?q=${word}`;
 var dict=document.getElementById('quote');
 dict.addEventListener('click',e=>{
     e.preventDefault();
-    window.history.back();
     window.location.href='quote.html';
     window.history.back();
 
@@ -240,7 +239,6 @@ dict.addEventListener('click',e=>{
 var dict=document.getElementById('dict');
 dict.addEventListener('click',e=>{
     e.preventDefault();
-    window.history.back();
     window.location.href='index.html';
     window.history.back();
 
@@ -253,7 +251,6 @@ dd.addEventListener('click',e=>{
 sss.classList.remove('hide');
 });
 sss.addEventListener('click',e=>{
-    window.history.back();
 window.location.href='savedwords.html';
 window.history.back();
 

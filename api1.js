@@ -23,7 +23,6 @@ var back=document.getElementById('back');
 
 back.addEventListener('click',e=>{
 e.preventDefault();
-window.history.back();
 
 window.location.href='index.html';
 window.history.back();

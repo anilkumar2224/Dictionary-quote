@@ -6,7 +6,6 @@ var dict=document.getElementById('dict');
 var lode=document.getElementById('lode');
 dict.addEventListener('click',e=>{
     e.preventDefault();
-    window.history.back();
     window.location.href='index.html';
     window.history.back();
 
