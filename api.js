@@ -247,11 +247,11 @@ dd.addEventListener('click',e=>{
     //console.log("ya");
 sss.classList.remove('hide');
 });
-// sss.addEventListener('click',e=>{
-// // window.location.assign('savedwords.html');
-// window.history.back();
+sss.addEventListener('click',e=>{
+window.location='savedwords.html';
+window.history.back();
 
-// });
+});
 var numArray=[];
 //console.log(words.length);
 function generateArray(){
