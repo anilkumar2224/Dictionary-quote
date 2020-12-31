@@ -251,35 +251,30 @@ window.history.back();
 
 });
 var numArray=[];
+var urls;
 //console.log(words.length);
 function generateArray(){
 for(var i=0;i<12;i++){
     var x=Math.floor(Math.random()*370101);
     numArray[i]=x; 
 }
+urls=[
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[0]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[1]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[2]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[3]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[4]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[5]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[6]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[7]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[8]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[9]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[10]]}?key=${key}`,
+  `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[11]]}?key=${key}`];
+  fetchdata();
 }
-
-//console.log(numArray);
-var urls=[
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[0]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[1]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[2]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[3]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[4]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[5]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[6]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[7]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[8]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[9]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[10]]}?key=${key}`,
-`https://www.dictionaryapi.com/api/v3/references/collegiate/json/${words[numArray[11]]}?key=${key}`,]
-
-for(var i=0;i<12;i++){
-    //console.log(words[numArray[i]]);
-}
-
-
-Promise.all(urls.map(u=> fetch(u)))
+function fetchdata(){
+Promise.all(urls.map(u=>fetch(u)))
 .then(responses=>Promise.all(responses.map(res=> res.json())))
 .then(mean=>{
     var num=0;
@@ -288,6 +283,8 @@ Promise.all(urls.map(u=> fetch(u)))
         // meanings.push(mean);
         // //console.log(meanings);
         //console.log(num);
+        console.log(data);
+        console.log(words[numArray[num]]);
         if(data[0].meta){
         //console.log("meaning:",data[0]);
         const card=document.getElementById(num.toString());
@@ -342,7 +339,7 @@ Promise.all(urls.map(u=> fetch(u)))
              }
                            
         num++;
-    })
+    });
     
 }).catch(err=>{
       section.classList.remove('hide');
@@ -352,190 +349,7 @@ Promise.all(urls.map(u=> fetch(u)))
         //location.reload();
         generateArray();
       
-                 
+               
  });
 
-
-
-
-
-// //card0
-// var x=Math.floor(Math.random()*370101);
-//   var word=words[x];
-//   //console.log(word);
-
-//  getMeaning(word).then(data=>{
-//                 if(data.meta){
-//                     //console.log("meaning:",data);
-//                     const card=document.getElementById('0');
-//     const html=`
-// <h3>${word}</h3>
-// <p>/${data.hwi.prs[0].mw}/</p>
-// <p style="font-weight:bold;">${data.fl}</p>
-// <p>${data.shortdef[0]}</p>
-// <i class="fas fa-heart save" id="s0"></i>
-// <div class="button">
-// <ul> 
-// <li class="zeroli">
-// <a href="#">
-// <span></span>
-// <span></span>
-// <span></span>
-// <span></span>
-// <span  class="fa fa-left link"   id="link0">read more</span>
-// </a> 
-// </li>
-// </ul> 
-// </div>`;
-//                   card.innerHTML=html;
-//                 }
-//                 else{
-//                     //console.log("meaning:",data);
-//                     const card=document.getElementById('0');
-// const html=`
-// <h3>${word}</h3>
-// <p>${data}</p>
-// <i class="fas fa-heart save" id="s0"></i>
-// <div class="button">
-// <ul> 
-// <li class="zeroli">
-// <a href="#">
-// <span></span>
-// <span></span>
-// <span></span>
-// <span></span>
-// <span  class="fa fa-left link"   id="link0">read more</span>
-// </a> 
-// </li>
-// </ul> 
-// </div>`;
-//                   card.innerHTML=html;
-//                 }
-               
-//             }).catch(err=>{
-//                 const card=document.getElementById('0');
-//                 //console.log(err);
-//                 card.innerHTML=err;
-             
-//             });
-
-
-// //card1
-// var x=Math.floor(Math.random()*370101);
-// var word=words[x];
-// //console.log(word);
-
-//     getMeaning(word).then(data=>{
-//                 if(data.meta){
-//                     //console.log("meaning:",data);
-//                     const card=document.getElementById('1');
-//     const html=`
-// <h3>${word}</h3>
-// <p>/${data.hwi.prs[0].mw}/</p>
-// <p style="font-weight:bold;">${data.fl}</p>
-// <p>${data.shortdef[0]}</p>
-// <i class="fas fa-heart save" id="s1"></i>
-// <div class="button">
-// <ul> 
-// <li class="oneli">
-// <a href="#">
-// <span></span>
-// <span></span>
-// <span></span>
-// <span></span>
-// <span  class="fa fa-left link"   id="link1">read more</span>
-// </a> 
-// </li>
-// </ul> 
-// </div>`;
-//                 card.innerHTML=html;
-//                 }
-//                 else{
-//                     //console.log("meaning:",data);
-//                     const card=document.getElementById('1');
-// const html=`
-// <h3>${word}</h3>
-// <p>${data}</p>
-// <i class="fas fa-heart save" id="s1"></i>
-// <div class="button">
-// <ul> 
-// <li class="oneli">
-// <a href="#">
-// <span></span>
-// <span></span>
-// <span></span>
-// <span></span>
-// <span  class="fa fa-left link"   id="link1">read more</span>
-// </a> 
-// </li>
-// </ul> 
-// </div>`;
-//                 card.innerHTML=html;
-//                 }
-                
-//             }).catch(err=>{
-//                 //console.log(err);
-//                 card.innerHTML=err;
-            
-//             });
-
-// //card2
-// var x=Math.floor(Math.random()*370101);
-//   var word=words[x];
-//   //console.log(word);
-
-
-//       getMeaning(word).then(data=>{
-//                 if(data.meta){
-//                     //console.log("meaning:",data);
-//                     const card=document.getElementById('2');
-//     const html=`
-// <h3>${word}</h3>
-// <p>/${data.hwi.prs[0].mw}/</p>
-// <p style="font-weight:bold;">${data.fl}</p>
-// <p>${data.shortdef[0]}</p>
-// <i class="fas fa-heart save" id="s2"></i>
-// <div class="button">
-// <ul> 
-// <li class="twoli">
-// <a href="#">
-// <span></span>
-// <span></span>
-// <span></span>
-// <span></span>
-// <span  class="fa fa-left link"   id="link2">read more</span>
-// </a> 
-// </li>
-// </ul> 
-// </div>`;
-//                   card.innerHTML=html;
-//                 }
-//                 else{
-//                     //console.log("meaning:",data);
-//                     const card=document.getElementById('2');
-// const html=`
-// <h3>${word}</h3>
-// <p>${data}</p>
-// <i class="fas fa-heart save" id="s2"></i>
-// <div class="button">
-// <ul> 
-// <li class="twoli">
-// <a href="#">
-// <span></span>
-// <span></span>
-// <span></span>
-// <span></span>
-// <span  class="fa fa-left link"   id="link2">read more</span>
-// </a> 
-// </li>
-// </ul> 
-// </div>`;
-//                   card.innerHTML=html;
-//                 }
-               
-//             }).catch(err=>{
-//                 //console.log(err);
-//                 const card=document.getElementById('2');
-//                 card.innerHTML=err;
-             
-//             });
+}
