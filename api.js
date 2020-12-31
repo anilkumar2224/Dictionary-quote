@@ -233,10 +233,6 @@ dict.addEventListener('click',e=>{
   window.history.back();
 
 });
-var dict=document.getElementById('dict');
-dict.addEventListener('click',e=>{
-window.history.back();
-});
 
 var dd=document.getElementById('fav');
 var sss=document.getElementById('myDropdown');
