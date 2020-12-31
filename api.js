@@ -171,7 +171,6 @@ mean.classList.add('hide');
  
 
 window.addEventListener('click',e=>{
-    e.preventDefault();
 if(e.target.classList.contains('save')&&!e.target.classList.contains('red')){
     //console.log(e.target.id);
   var item= document.getElementById(e.target.id);
@@ -231,13 +230,11 @@ window.location.href=`https://www.google.com/search?q=${word}`;
 
 var dict=document.getElementById('quote');
 dict.addEventListener('click',e=>{
-    e.preventDefault();
     window.location.href='quote.html';
 
 });
 var dict=document.getElementById('dict');
 dict.addEventListener('click',e=>{
-    e.preventDefault();
     window.location.href='index.html';
 });
 
@@ -248,7 +245,7 @@ dd.addEventListener('click',e=>{
 sss.classList.remove('hide');
 });
 sss.addEventListener('click',e=>{
-window.location='savedwords.html';
+window.location.href='savedwords.html';
 window.history.back();
 
 });
