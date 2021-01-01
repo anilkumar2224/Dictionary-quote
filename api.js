@@ -250,6 +250,7 @@ sss.addEventListener('click',e=>{
 window.history.back();
 
 });
+var lode=document.getElementById('lode');
 var numArray=[];
 var urls;
 //console.log(words.length);
@@ -278,6 +279,7 @@ Promise.all(urls.map(u=>fetch(u)))
 .then(responses=>Promise.all(responses.map(res=> res.json())))
 .then(mean=>{
     var num=0;
+      lode.classList.add('hide');
     section.classList.remove('hide');
     mean.forEach(data=>{
         // meanings.push(mean);
