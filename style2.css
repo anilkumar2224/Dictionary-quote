@@ -280,6 +280,7 @@ nav ul li a:hover{
   button:focus{
       outline: 0;
       box-shadow: none;
+     -webkit-tap-highlight-color: transparent;
   }
   .cc{
       width: 430px;
