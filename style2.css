@@ -18,10 +18,15 @@ body {
 }
 ul{
     list-style: none;
+     -webkit-tap-highlight-color: transparent !important;
 }
 a{
     text-decoration: none;
     color:#FFF;
+     -webkit-tap-highlight-color: transparent !important;
+}
+button{
+     -webkit-tap-highlight-color: transparent !important;
 }
   /*navbar*/
 
