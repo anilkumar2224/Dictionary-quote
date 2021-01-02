@@ -3,14 +3,16 @@
     margin: 0;
     padding-left: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
+     -webkit-tap-highlight-color: transparent !important;
 }
 ul{
     list-style: none;
+     -webkit-tap-highlight-color: transparent !important;
 }
 a{
     text-decoration: none;
     color:#FFF;
+     -webkit-tap-highlight-color: transparent !important;
 }
 #lode{
   margin: 0 auto;
@@ -73,6 +75,9 @@ body{
     text-align: right;
     
    
+}
+button{
+     -webkit-tap-highlight-color: transparent  !important;
 }
 .dropmenu{
     width: 320px;
