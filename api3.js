@@ -30,7 +30,7 @@ getQuote(index).then(data=>{
     
     var author='-'+data.author;
     if(data.author==null){
-        author='-anonymous';
+        author='- AnilKumar';
     }
     q=data.text.substring(0,data.text.length-1);
     quote.innerText=data.text;
