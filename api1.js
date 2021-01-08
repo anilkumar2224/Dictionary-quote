@@ -43,6 +43,6 @@ if(e.target.classList.contains('delete')){
 if(e.target.classList.contains('link')){
     //console.log(e.path[5].querySelector('h3').innerText);
 var word=e.path[5].querySelector('h3').innerText;
-window.location.href=`https://www.google.com/search?q=${word}`;
+window.location.href=`https://www.google.com/search?q=${word} meaning`;
 }
 });
