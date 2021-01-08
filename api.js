@@ -219,7 +219,7 @@ if (e.target.id!='fav' && e.target.id!='pop') {
 
 //console.log(card.querySelector('h3').innerText);
 var word=card.querySelector('h3').innerText;
-window.location.href=`https://www.google.com/search?q=${word}`;
+window.location.href=`https://www.google.com/search?q=${word} meaning`;
   }
 });
 
