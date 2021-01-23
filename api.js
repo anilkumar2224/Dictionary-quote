@@ -285,8 +285,8 @@ Promise.all(urls.map(u=>fetch(u)))
         // meanings.push(mean);
         // //console.log(meanings);
         //console.log(num);
-        console.log(data);
-        console.log(words[numArray[num]]);
+//         console.log(data);
+//         console.log(words[numArray[num]]);
         if(data[0].meta){
         //console.log("meaning:",data[0]);
         const card=document.getElementById(num.toString());
